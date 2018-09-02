@@ -8,7 +8,6 @@
     "copy-to-clipboard": "^3.0.8",
     "file-system": "^2.2.2",
     "gh-pages": "^1.2.0",
-    "js-file-download": "^0.4.1",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-scripts": "1.1.5"
