@@ -131,7 +131,7 @@ export default class InputLink extends Component {
                             {
                                 this.state.itemInfo.previews && 
                                 <div>
-                                    <label>Item information URL</label>
+                                    <label>Item Live Preview URL</label>
                                     <div className="input-group">
                                         <input
                                             type="text"
@@ -160,7 +160,7 @@ export default class InputLink extends Component {
                             {
                                 this.state.itemInfo.previews && 
                                 <div>
-                                    <label>Item information URL</label>
+                                    <label>Item Preview Image</label>
                                     <div className="input-group">
                                         <input
                                             type="text"
@@ -168,7 +168,7 @@ export default class InputLink extends Component {
                                             placeholder="image_url"
                                             aria-label="image_url"
                                             aria-describedby="basic-addon1"
-                                            value={'https://themeforest.net/' + (this.state.itemInfo.previews && this.state.itemInfo.previews.landscape_preview.landscape_url) || ''}
+                                            value={(this.state.itemInfo.previews && this.state.itemInfo.previews.landscape_preview.landscape_url) || ''}
                                             readOnly
                                             onClick={e => {
                                                 fileDownload(e.target.value, this.state.itemInfo.name.split('-')[0].split('|')[0].trim() + '.png' )
