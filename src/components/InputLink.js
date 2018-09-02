@@ -113,7 +113,7 @@ export default class InputLink extends Component {
                                             value={this.state.itemInfo.url || ''}
                                             readOnly
                                             onClick={e => {
-                                                copy(this.state.itemInfo.url)
+                                                copy(e.target.value)
                                                 this.setState({
                                                     error: true,
                                                     alert: {
@@ -142,7 +142,7 @@ export default class InputLink extends Component {
                                             value={'https://themeforest.net/' + (this.state.itemInfo.previews.live_site.href || '') }
                                             readOnly
                                             onClick={e => {
-                                                copy(this.state.itemInfo.url)
+                                                copy(e.target.value)
                                                 this.setState({
                                                     error: true,
                                                     alert: {
@@ -171,9 +171,20 @@ export default class InputLink extends Component {
                                             value={(this.state.itemInfo.previews && this.state.itemInfo.previews.landscape_preview.landscape_url) || ''}
                                             readOnly
                                             onClick={e => {
-                                                fileDownload(e.target.value, this.state.itemInfo.name.split('-')[0].split('|')[0].trim() + '.png' )
+                                                copy(e.target.value)
+                                                this.setState({
+                                                    error: true,
+                                                    alert: {
+                                                        msg: 'Image URL copied',
+                                                        type: 'success'
+                                                    }
+                                                })
+                                                ///fileDownload(e.target.value, this.state.itemInfo.name.split('-')[0].split('|')[0].trim() + '.' + this.state.itemInfo.previews.landscape_preview.landscape_url.split('/').pop().split('.').pop() )
                                             }}
                                         />
+                                        <div class="input-group-append">
+                                            <a href={(this.state.itemInfo.previews && this.state.itemInfo.previews.landscape_preview.landscape_url) || ''} target="_blank" class="input-group-text">open</a>
+                                        </div>
                                     </div>
                                 </div>
                             }
